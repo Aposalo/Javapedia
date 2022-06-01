@@ -7,27 +7,26 @@ public class Javapedia {
 	static String[][] historicalFigures;
 	
 	public static void main(String[] args) {
-        
-        int historicalFiguresCount = getHistoricalFiguresCount();       
-        historicalFigures = new String[historicalFiguresCount][generalInfo.length];
-        setHistoricalFigureGeneralInfo();
-        print2DArray();
-        printInformationForSearchedHistoricalFigure();    
-        scan.close();
-    }
+		int historicalFiguresCount = getHistoricalFiguresCount();       
+		historicalFigures = new String[historicalFiguresCount][generalInfo.length];
+		setHistoricalFigureGeneralInfo();
+		print2DArray();
+		printInformationForSearchedHistoricalFigure();    
+		scan.close();
+    	}
 	
 	private static void editHistoricalFigureInformation(String mode, String search) 
 	{
 		for (int i = 0; i < historicalFigures.length; i++) 
-        {
+        	{
 			if (mode.equals("set")) 
 				System.out.println("\n\tFigure " + (i+1));
 			
 			printHistorcalFigureInfoMode(mode, search, i);
 			
 			if (mode.equals("print2D")) 
-    			System.out.print("\n");
-        }
+    				System.out.print("\n");
+        	}
 	}
 
 	private static void printHistorcalFigureInfoMode(String mode, String search, int i) {
@@ -47,29 +46,29 @@ public class Javapedia {
 
 	private static void printInformationForSearchedHistoricalFigure() {
 		System.out.print("\nWho do you want information on? ");  
-        String search = scan.next();
-        editHistoricalFigureInformation("print", search);
+		String search = scan.next();
+		editHistoricalFigureInformation("print", search);
 	}
 
 	private static void setHistoricalFigureGeneralInfo() {
 		editHistoricalFigureInformation("set", new String());
 	}
-	
+
 	private static int getHistoricalFiguresCount() {
 		System.out.println("\n**********Javapedia**********");
-        System.out.println("How many historical figures will you register?");
-        int historicalFiguresCount = -1;
-        do 
-        {
-        	System.out.println("Please enter a positive number!");
-        	while(!scan.hasNextInt()) 
-            {
-        		System.out.println("That's not a number!");
-        		scan.next(); // this is important!
-            }
-        	historicalFiguresCount = scan.nextInt();
-        	
-        }while(historicalFiguresCount < 0);
+		System.out.println("How many historical figures will you register?");
+		int historicalFiguresCount = -1;
+		do 
+		{
+			System.out.println("Please enter a positive number!");
+			while(!scan.hasNextInt()) 
+		    {
+				System.out.println("That's not a number!");
+				scan.next(); // this is important!
+		    }
+			historicalFiguresCount = scan.nextInt();
+
+		} while(historicalFiguresCount < 0);
 		return historicalFiguresCount;
 	}
 
