@@ -62,10 +62,10 @@ public class Javapedia {
 		{
 			System.out.println("Please enter a positive number!");
 			while(!scan.hasNextInt()) 
-		    {
+		    	{
 				System.out.println("That's not a number!");
 				scan.next(); // this is important!
-		    }
+		   	}
 			historicalFiguresCount = scan.nextInt();
 
 		} while(historicalFiguresCount < 0);
